@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Work Sans', sans-serif;
+    src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --Light-pink: hsl(275, 100%, 97%);
+    --Grayish-purple: hsl(292, 16%, 49%);
+    --Dark-purple: hsl(292, 42%, 14%);
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-color: var(--Light-pink);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    width: 500px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--Dark-purple);
+    font-weight: 800;
+    font-size: 3.2rem;
+    margin-bottom: 30px;
+}
+
+h1::before {
+    content: url(./assets/images/icon-star.svg);
+    margin-right: 15px;
+}
+
+h4 {
+    color: var(--Dark-purple);
+    font-weight: 700;
+    margin-bottom: 20px;
+    cursor: pointer;
+    top: 3px;
+}
+
+h4:hover {
+    color: var(--Grayish-purple);
+}
+
+.click {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+
+p {
+    font-size: 16px;
+    color: var(--Grayish-purple);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: none;
+}
+
+hr {
+    border: 1px solid var(--Grayish-purple);
+    margin-bottom: 30px;
+    opacity: 0.1;
+}
+
+.active {
+    display: block;
+    animation: fade 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body {
+        background-image: url(./assets/images/background-pattern-mobile.svg);
+    }
+
+    .main {
+        width: 100%;
+        padding: 20px;
+        margin: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h1::before {
+        margin-right: 10px;
+    }
+
+
+    p {
+        font-size: 14px;
+    }
+
+    hr {
+        margin-bottom: 20px;
+    }
+
+}
